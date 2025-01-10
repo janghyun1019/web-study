@@ -8,5 +8,9 @@
 </head>
 <body>
 	<h1>main 페이지</h1>
+	
+	<p>${data1}</p>
+	<p>${data2}</p>
+	
 </body>
 </html>

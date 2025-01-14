@@ -4,6 +4,14 @@ public class DrinkItem {
 	String item;
 	String type;
 	
+	public DrinkItem() {}
+	
+	public DrinkItem(String item, String type) {
+		super();
+		this.item = item;
+		this.type = type;
+	}
+	
 	public String getItem() {
 		return item;
 	}

@@ -4,14 +4,16 @@ public class Member {
 	String id;
 	String pw;
 	String name;
+	String type;
 	
 	public Member() {}
 	
-	public Member(String id, String pw, String name) {
+	public Member(String id, String pw, String name, String type) {
 		super();
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
+		this.type = type;
 	}
 	
 	public String getId() {
@@ -32,6 +34,11 @@ public class Member {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+	public String getType() {
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
+    }
 	
 }

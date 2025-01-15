@@ -137,7 +137,7 @@ public class JstlController {
 			List<Member> memberList = new ArrayList<Member>();
 			
 			for(int i=1; i<=5; i++) {
-				memberList.add(new Member("아이디"+i, "비번"+i, "이름"+i));
+				memberList.add(new Member("아이디"+i, "비번"+i, "이름"+i, type));
 			}
 			
 			model.addAttribute("memberList", memberList);

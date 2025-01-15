@@ -26,7 +26,7 @@ public class ListController {
         } else if ("member".equals(type)) {
             // Member 리스트 생성 (Stream 활용)
             List<Member> memberList = IntStream.rangeClosed(1, 5)
-                                               .mapToObj(i -> new Member("아이디" + i, "비번" + i, "이름" + i))
+                                               .mapToObj(i -> new Member("아이디" + i, "비번" + i, "이름" + i, type))
                                                .collect(Collectors.toList());
             model.addAttribute("memberList", memberList);
         }

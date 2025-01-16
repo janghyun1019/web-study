@@ -1,4 +1,4 @@
-package com.app.controller;
+package com.app.controller.study;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.app.dto.ResponseItem;
+import com.app.dto.study.ResponseItem;
 
 @Controller
 @RequestMapping("/response1")

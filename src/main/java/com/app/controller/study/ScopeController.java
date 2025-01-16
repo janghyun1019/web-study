@@ -1,4 +1,4 @@
-package com.app.controller;
+package com.app.controller.study;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;

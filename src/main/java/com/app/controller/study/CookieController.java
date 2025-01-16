@@ -1,4 +1,4 @@
-package com.app.controller;
+package com.app.controller.study;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;

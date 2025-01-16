@@ -1,6 +1,6 @@
-package com.app.dto;
+package com.app.dto.study;
 
-public class Product {
+public class ProductRequestForm {
 	
 	public String id;
 	public String name;

@@ -3,5 +3,19 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans.xsd">
-	
+
+
+	<!-- roomDAO 빈 등록 -->
+	<!-- RoomDAO roomDAO = new RoomDAOImpl(); -->
+	<!-- <bean id="roomDAO" class="com.app.dao.room.impl.RoomDAOImpl"></bean> -->
+
+	<!-- roomService 에 roomDAO 주입 -->
+	<!-- <bean id="roomService" class="com.app.service.room.impl.RoomServiceImpl"> -->
+	<!-- RoomService roomService = new RoomServiceImpl(roomDAO); -->
+	<!-- 생성자를 통한 의존성 주입 -->
+	<!-- <constructor-arg ref="roomDAO"></constructor-arg> -->
+	<!-- set 을 통해 의존성 주입 -->
+	<!-- <property name="roomDAO" ref="roomDAO"></property> -->
+	<!-- </bean> -->
+
 </beans>

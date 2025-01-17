@@ -10,15 +10,15 @@
 	<h1>requestParam param1 페이지</h1>
 	
 	<div>
-		
+	
 		<form action="/param2" method="post">
 			<input type="text" name="abc"><br/>
 			<input type="text" name="def"><br/>
 			<button type="submit">전송</button>
 		</form>
 		
-		<a href="/param2?abc=asodf&def=12312">param2로</a>
-		
+		<a href="/param2?abc=asodf&def=12313">param2로</a>
+	
 	</div>
 </body>
 </html>

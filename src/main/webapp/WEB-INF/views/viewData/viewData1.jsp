@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>viewDat1 페이지</h1>
+	<h1>viewData1 페이지</h1>
 	
 	<%=request.getAttribute("state")%>
 	<%=request.getAttribute("time")%>

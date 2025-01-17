@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <h1>${title}</h1>
-    <p>${info}</p>
+	pathA
 </body>
 </html>

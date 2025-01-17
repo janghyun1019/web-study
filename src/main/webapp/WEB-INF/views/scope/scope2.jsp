@@ -7,17 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>scope2 page</h1>
+	<h1>scope2</h1>
 	<p>${requestMsg}</p>
 	<p>${requestScope.requestMsg}</p>
 	
 	<p>${sessionMsg}</p>
-	<p>${seccionScope.sessionMsg}</p>
-	<!-- 내가 요청하는 세션영역에 저장이 된다 -->
+	<p>${sessionScope.sessionMsg}</p>
 	
 	<p>${applicationMsg}</p>
-	<p>${applictionScope.applicationMsg}</p>
-	
+	<p>${applicationScope.applicationMsg}</p>
 	
 </body>
 </html>

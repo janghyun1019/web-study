@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>re3 page</h1>
-	
-	location.href = "/re/re2";
+	<script>
+		location.href = "/re/re2";
+	</script>
 </body>
 </html>

@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>FAQ</h1>
+	<h1>FAQ 자주 묻는 질문 </h1>
 </body>
 </html>

@@ -88,20 +88,20 @@ public class Practice01Controller {
 	}
 	
 	
-//	@RequestMapping("/prac01/viewData1-4")
-//	public String viewData1_4(Model model) {
-//		
-//		model.addAttribute("item", "원조커피");
-//		model.addAttribute("type", "커피음료");
-//		
-//		DrinkItem drinkItem = new DrinkItem(null, null);
-//		drinkItem.setItem("유자차");
-//		drinkItem.setType("Tea");
-//		
-//		model.addAttribute("drinkItem", drinkItem);
-//		
-//		return "practice/prac01";
-//	}
+	@RequestMapping("/prac01/viewData1-4")
+	public String viewData1_4(Model model) {
+		
+		model.addAttribute("item", "원조커피");
+		model.addAttribute("type", "커피음료");
+		
+		DrinkItem drinkItem = new DrinkItem();
+		drinkItem.setItem("유자차");
+		drinkItem.setType("Tea");
+		
+		model.addAttribute("drinkItem", drinkItem);
+		
+		return "practice/prac01";
+	}
 	
 	
 }

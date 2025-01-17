@@ -7,10 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>main 페이지</h1>
+	<h1>quiz main</h1>
 	
-	<p>${data1}</p>
-	<p>${data2}</p>
-	
+	${data1}
+	${data2}
 </body>
 </html>

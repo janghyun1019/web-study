@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
- <h1>url1.jsp 파일</h1>
+	<h1>url1.jsp</h1>
 </body>
 </html>

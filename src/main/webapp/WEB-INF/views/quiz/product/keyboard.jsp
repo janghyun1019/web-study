@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>product keyboard 페이지</h1>
+	<h1>quiz keyboard</h1>
 </body>
 </html>

@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<p>read-cookie</p>
+	<h1>read-cookie</h1>
+	<h2>${weather}</h2>
 </body>
 </html>

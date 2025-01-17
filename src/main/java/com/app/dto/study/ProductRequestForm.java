@@ -1,11 +1,9 @@
 package com.app.dto.study;
 
 public class ProductRequestForm {
-	
 	public String id;
 	public String name;
 	public int price;
-	
 	
 	public String getId() {
 		return id;
@@ -26,11 +24,5 @@ public class ProductRequestForm {
 		this.price = price;
 	}
 	
-//	public void setPrice(int price) {
-//		if(price <0)
-//			price = 0;
-//	}
 	
-	
-
 }

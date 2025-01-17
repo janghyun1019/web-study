@@ -12,12 +12,12 @@ public class Request02Controller {
 		
 		return "url1";
 	}
-
+	
+	
 //	@RequestMapping("/request02/url03")
 	@RequestMapping("/url03")
 	public String url03() {
 		
 		return "url1";
 	}
-
 }

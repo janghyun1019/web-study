@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>requestParam param2 페이지</h1>
+	<h1>param2 page</h1>
 </body>
 </html>

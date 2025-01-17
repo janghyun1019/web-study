@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>re2 page</h1>
+	<h1>re2 페이지</h1>
 	
 	<h2>${msg}</h2>
 </body>

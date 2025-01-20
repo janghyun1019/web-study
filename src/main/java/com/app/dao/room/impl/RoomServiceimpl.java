@@ -9,7 +9,7 @@ import com.app.dao.room.RoomDAO;
 import com.app.dto.room.Room;
 import com.app.service.room.RoomService;
 
-@Service
+@Service("daoRoomServiceImpl") // 빈 이름 변경
 public class RoomServiceImpl implements RoomService {
 
 	@Autowired  //의존성 주입 어노테이션 	

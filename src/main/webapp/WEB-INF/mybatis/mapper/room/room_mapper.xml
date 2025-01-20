@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="room_mapper">
+
+<!-- 	<select id="findLoginUser"
+		parameterType="com.rsrvapp.dto.user.User"
+		resultType="com.rsrvapp.dto.user.User">
+		SELECT * FROM MY_USER WHERE id=#{id} and pw=#{pw}
+	</select>
+	 -->
+	<insert id="saveRoom" parameterType="com.app.dto.room.Room">
+		insert into T_ROOM values ( SEQ_T_ROOM_PK.nextval,
+									#{buildingNumber},
+									#{roomNumber},
+									#{floor},
+									#{maxGuestCount},
+									#{viewType} )
+	</insert>
+	
+<!-- 	<select id="findUserList" resultType="com.rsrvapp.dto.user.User">
+		SELECT * FROM MY_USER
+	</select>
+	
+	<select id="findUserListByUserType"
+		resultType="com.rsrvapp.dto.user.User" parameterType="String">
+		SELECT * FROM MY_USER
+		WHERE userType = #{userType}
+	</select> -->
+	
+</mapper>

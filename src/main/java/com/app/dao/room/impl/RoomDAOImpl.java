@@ -21,4 +21,12 @@ public class RoomDAOImpl implements RoomDAO {
 		return null;
 	}
 
+	@Override
+	public int saveRoom(Room room) {
+		// TODO Auto-generated method stub
+		// DB 에 전달받은 Room 객체에 들어있는 데이터를 잘~ 저장 ~
+		
+		return 0;
+	}
+
 }

@@ -24,6 +24,7 @@
 		
 		<br>
 		<button type="submit">객실추가</button>
+		<button type="button" onClick="location.href='/admin/rooms'">객실 목록보기</button>
 	</form>
 </body>
 </html>

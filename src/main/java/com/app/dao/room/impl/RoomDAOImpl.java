@@ -37,4 +37,20 @@ public class RoomDAOImpl implements RoomDAO {
 		return result;
 	}
 
+	@Override
+	public Room findRoomByRoomId(int roomId) {
+		
+		Room room = sqlSessionTemplate.selectOne("room_mapper.findRoomByRoomId", roomId);
+		
+		return room;
+	}
+
+	@Override
+	public int removeRoom(int roomId) {
+		
+		int result = sqlSessionTemplate.delete("room_mapper.removeRoom", roomId);
+		
+		return result;
+	}
+
 }

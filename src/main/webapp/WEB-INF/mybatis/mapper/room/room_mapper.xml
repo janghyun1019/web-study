@@ -17,5 +17,15 @@
 		FROM T_ROOM
 	</select>
 	
+	<select id="findRoomByRoomId" resultType="Room" parameterType="int">
+		SELECT *
+		FROM T_ROOM
+		WHERE room_id = #{roomId}
+	</select>
+	
+	<delete id="removeRoom" parameterType="int">
+		DELETE FROM T_ROOM
+		WHERE room_id = #{roomId}
+	</delete>
 	
 </mapper>

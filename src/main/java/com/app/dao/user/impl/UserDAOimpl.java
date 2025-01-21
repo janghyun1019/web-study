@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import com.app.dao.user.UserDAO;
 
 @Repository
-public class UserDAOimpl implements UserDAO {
+public class UserDAOImpl implements UserDAO {
 
 }

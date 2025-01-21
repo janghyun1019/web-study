@@ -13,22 +13,23 @@ import com.app.dto.room.Room;
 // APIServiceRepository
 @Repository   //Bean 등록 Annotation
 public class RoomDAOImpl implements RoomDAO {
-	
-	@Autowired
-	SqlSessionTemplate sqlSessionTemplate;
 
+	@Autowired			
+	SqlSessionTemplate sqlSessionTemplate;			
+
+	
 	@Override
 	public List<Room> findRoomList() {
 		
 		System.out.println("RoomDAO 호출 됨");
 		//db 연결 조회
+		List<Room> roomList = sqlSessionTemplate.selectList("room_mapper.findRoomList");
 		
-		return null;
+		return roomList;
 	}
 
 	@Override
 	public int saveRoom(Room room) {
-		// TODO Auto-generated method stub
 		// DB 에 전달받은 Room 객체에 들어있는 데이터를 잘~ 저장 ~
 		
 		int result = sqlSessionTemplate.insert("room_mapper.saveRoom", room);

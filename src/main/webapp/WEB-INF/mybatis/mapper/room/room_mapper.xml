@@ -3,14 +3,8 @@
 
 <mapper namespace="room_mapper">
 
-<!-- 	<select id="findLoginUser"
-		parameterType="com.rsrvapp.dto.user.User"
-		resultType="com.rsrvapp.dto.user.User">
-		SELECT * FROM MY_USER WHERE id=#{id} and pw=#{pw}
-	</select>
-	 -->
-	<insert id="saveRoom" parameterType="com.app.dto.room.Room">
-		insert into T_ROOM values ( SEQ_T_ROOM_PK.nextval,
+	<insert id="saveRoom" parameterType="Room">
+		insert into T_ROOM values ( SEQ_T_ROOM_PK.nextval, 
 									#{buildingNumber},
 									#{roomNumber},
 									#{floor},
@@ -18,14 +12,10 @@
 									#{viewType} )
 	</insert>
 	
-<!-- 	<select id="findUserList" resultType="com.rsrvapp.dto.user.User">
-		SELECT * FROM MY_USER
+	<select id="findRoomList" resultType="Room">
+		SELECT * 
+		FROM T_ROOM
 	</select>
 	
-	<select id="findUserListByUserType"
-		resultType="com.rsrvapp.dto.user.User" parameterType="String">
-		SELECT * FROM MY_USER
-		WHERE userType = #{userType}
-	</select> -->
 	
 </mapper>

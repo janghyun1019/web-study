@@ -7,11 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>사용자 마이 페이지</h1>
+	<h1>사용자 마이페이지</h1>
 	
-	<p>아이디 : ${uswr.id}</p>
-	<p>이름 : ${uswr.name}</p>
+	<p>	아이디 : ${user.id} </p>
+	<p> 이름 :  ${user.name} </p>
+	<p>
+		<a href="/main">메인화면으로</a>
+	</p>
 	
-	<a href="/main">메인화면으로</a>
 </body>
 </html>

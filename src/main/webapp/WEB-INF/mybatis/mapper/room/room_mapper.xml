@@ -28,4 +28,14 @@
 		WHERE room_id = #{roomId}
 	</delete>
 	
+	<update id="modifyRoom" parameterType="Room">
+		UPDATE T_ROOM
+		SET building_number = #{buildingNumber},
+			room_number = #{roomNumber},
+			floor = #{floor},
+			max_guest_count = #{maxGuestCount},
+			view_type = #{viewType}
+		WHERE room_id = #{roomId}
+	</update>
+	
 </mapper>

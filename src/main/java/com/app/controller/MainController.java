@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MainController {
-	
+
 	@GetMapping("/main")
 	public String main() {
 		return "main";
@@ -15,10 +15,4 @@ public class MainController {
 	public String root() {
 		return "redirect:/main";
 	}
-	
-	@GetMapping("/signup")
-    public String signup() {
-        return "signup";
-    }
-
 }

@@ -12,13 +12,8 @@ public interface UserService {
 	int saveAdminUser(User user);
 	
 	List<User> findUserList();
-
-	User checkUserLogin(User user);	
 	
-	User findLoginUser(User user);
+	User checkUserLogin(User user);
 	
-	User findUserById(User user);
-
-	User findUserById(String attribute);
-
+	User findUserById(String id);
 }

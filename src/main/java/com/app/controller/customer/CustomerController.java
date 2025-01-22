@@ -19,16 +19,15 @@ public class CustomerController {
 	@Autowired
 	UserService userService;
 	
-	// 회원가입
+	//회원가입
 	@GetMapping("/customer/signup")
-	public String singup() {
+	public String signup() {
 		return "customer/signup";
 	}
 	
 	@PostMapping("/customer/signup")
-	public String singupAction(User user) {
-		
-		user.setUserType("CUS");
+	public String signupAction(User user) {
+		user.setUserType( CommonCode.USER_USERTYPE_CUSTOMER );
 		int result = userService.saveUser(user);
 		
 		System.out.println("회원가입 처리 결과 : " + result);
@@ -38,8 +37,6 @@ public class CustomerController {
 		} else {
 			return "customer/signup";			
 		}
-
-		
 	}
 	
 	@GetMapping("/customer/login")
@@ -50,29 +47,29 @@ public class CustomerController {
 	@PostMapping("/customer/login")
 	public String loginAction(User user, HttpSession session) {
 		
-		// user  id pw 화면으로 부터 전달
+		//user   id pw 화면으로부터 전달
 		// name userType : null
 		
-		// user 객체를 가지고 로그인 할 수 잇게 정보가 들어있는지! 확인!
+		//user 로그인 할 수 있게 정보가 들어있는지! 확인!
 		user.setUserType( CommonCode.USER_USERTYPE_CUSTOMER );
 		User loginUser = userService.checkUserLogin(user);
 		
-		if(loginUser == null) { // 아이디X? 아이디O&비번X null
+		if(loginUser == null) { // 아이디X? 아이디O&비번X  null
 			return "customer/login";
-		} else { // 아이디&비번이 맞으면 loginUser
-			// 로그인 정보가 맞아서 로그인 성공
-			// session.setAttribute("loginUser", loginUser);
-			// session.setAttribute("loginUserId", loginUser.getId());
+		} else {  // 아이디&비번이 맞으면 loginUser 
+			//로그인 정보가 맞아서 로그인 성공
+			//session.setAttribute("loginUser", loginUser);
+			//session.setAttribute("loginUserId", loginUser.getId());
 			LoginManager.setSessionLogin(session, loginUser.getId());
 			
 			return "redirect:/main";
-		}		
+		}
 	}
 	
 	@GetMapping("/customer/logout")
 	public String logout(HttpSession session) {
 		LoginManager.logout(session);
-		// session.invalidate();
+		//session.invalidate();
 		
 		return "redirect:/main";
 	}
@@ -80,22 +77,25 @@ public class CustomerController {
 	@GetMapping("/customer/mypage")
 	public String mypage(HttpSession session, Model model) {
 		
-		// session 에 loginUserId 값이 존재 유무
-		// if(session.getAttribute("loginUserId") != null) { // 로그인 상태
+		//session 에 loginUserId 값이 존재유무
+		//if(session.getAttribute("loginUserId") != null) { //로그인 상태
 		if(LoginManager.isLogin(session)) {
-		
-			// 로그인 되어 있는 사용자 
-			// User user = userService.findUserById( (String)session.getAttribute("loginUserId") );
+			
+			//로그인되어있는 사용자의 정보를 보여주기
+			//User user = userService.findUserById( (String)session.getAttribute("loginUserId") );
 			User user = userService.findUserById( LoginManager.getLoginUserId(session) );
 			model.addAttribute("user", user);
 			
 			return "customer/mypage";
-			
 		}
-		// 로그인 안된 상태
+		//로그인 안된 상태
 		return "redirect:/customer/login";
+		
+		
+		
 	}
 }
+
 
 
 

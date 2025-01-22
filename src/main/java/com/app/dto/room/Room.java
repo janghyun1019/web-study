@@ -24,7 +24,7 @@ public class Room {
 	int floor;   //층   7  8  
 	int maxGuestCount; //최대 숙박 인원
 	String viewType;    // OCN / CTY / MOT
-					    // Oceon City  Mountain
+					    // Ocean City  Mountain
 						// 오션   시티    마운틴
 				//int		1     2     3 
 	//int accomodationId;

@@ -11,7 +11,7 @@
 	
 	<form action="" method="post">
 		아이디 : <input type="text" name="id"> <br>
-		비밀번호 : <input type="password" name="pw"> <br>
+		비밀번호 :  <input type="password" name="pw"> <br>
 		<button type="submit">로그인</button>
 	</form>
 </body>

@@ -1,0 +1,51 @@
+package com.app.util;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+public class LoginManager {
+	
+	public static final String SESSION_LOGIN_KEY = "loginUserId";
+	
+	public static void setSessionLogin(HttpSession session, String id) {
+		session.setAttribute(SESSION_LOGIN_KEY, id);
+	}
+	
+	public static void setSessionLogin(HttpServletRequest request, String id) {
+		setSessionLogin(request.getSession(), id);
+	}
+	
+	// 로그인이 됐다 안됐다 구분
+	public static boolean isLogin(HttpSession session) {
+		if(session.getAttribute(SESSION_LOGIN_KEY) != null)
+			return true;
+		
+		return false;
+	}
+	
+	// 리퀘스트가 와서 
+	public static boolean isLogin(HttpServletRequest request) {
+		return isLogin(request.getSession());
+	}
+	
+	// 실제 저장된 스트링을 넣고 싶다
+	public static String getLoginUserId(HttpSession session) {
+		return (String)session.getAttribute(SESSION_LOGIN_KEY);
+	}
+	
+	public static String getLoginUserId(HttpServletRequest request) {
+		return getLoginUserId(request.getSession());
+	}
+	
+	public static void logout(HttpSession session) {
+		session.invalidate();
+	}
+	
+	public static void logout(HttpServletRequest request) {
+		logout(request.getSession());
+	}
+	
+	
+}
+
+

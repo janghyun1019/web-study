@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.app.common.CommonCode;
 import com.app.dto.user.User;
 import com.app.service.user.UserService;
+import com.app.util.LoginManager;
 
 @Controller
 public class CustomerController {
@@ -61,7 +62,8 @@ public class CustomerController {
 		} else { // 아이디&비번이 맞으면 loginUser
 			// 로그인 정보가 맞아서 로그인 성공
 			// session.setAttribute("loginUser", loginUser);
-			session.setAttribute("loginUserId", loginUser.getId());
+			// session.setAttribute("loginUserId", loginUser.getId());
+			LoginManager.setSessionLogin(session, loginUser.getId());
 			
 			return "redirect:/main";
 		}		
@@ -69,7 +71,8 @@ public class CustomerController {
 	
 	@GetMapping("/customer/logout")
 	public String logout(HttpSession session) {
-		session.invalidate();
+		LoginManager.logout(session);
+		// session.invalidate();
 		
 		return "redirect:/main";
 	}
@@ -78,13 +81,15 @@ public class CustomerController {
 	public String mypage(HttpSession session, Model model) {
 		
 		// session 에 loginUserId 값이 존재 유무
-		if(session.getAttribute("loginUserId") != null) { // 로그인 상태
-			
+		// if(session.getAttribute("loginUserId") != null) { // 로그인 상태
+		if(LoginManager.isLogin(session)) {
+		
 			// 로그인 되어 있는 사용자 
-			User user = userService.findUserById( (String)session.getAttribute("loginUserId") );
+			// User user = userService.findUserById( (String)session.getAttribute("loginUserId") );
+			User user = userService.findUserById( LoginManager.getLoginUserId(session) );
 			model.addAttribute("user", user);
 			
-			return "customer/mapage";
+			return "customer/mypage";
 			
 		}
 		// 로그인 안된 상태

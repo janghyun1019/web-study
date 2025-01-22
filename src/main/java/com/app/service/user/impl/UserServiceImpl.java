@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public User checkUserLogin(User user) { // 로그인   관리자/사용자
-		
+		/*
 		// 1.서비스자체에서 로직을 수행하는 방법
 		User loginUser = userDAO.findUserById(user.getId());
 		
@@ -73,6 +73,8 @@ public class UserServiceImpl implements UserService {
 		// 아이디X? 아이디O&비번X null
 		
 		// int 코드 리턴 -> 1:로그인 성공 2:아이디는 맞는데 비번이 틀렸다 3:아이디도 없다 4:휴먼계정
+		*/
+		
 		
 		/*
 		User loginUser = userDAO.findUserById(user.getId());
@@ -89,7 +91,10 @@ public class UserServiceImpl implements UserService {
 		*/
 		
 		// 2.DAO -> Mapper 쿼리를 만들어서 비교하는 방법
+		User loginUser = userDAO.checkUserLogin(user);
+		return loginUser; // 값 O 로그인 정보 O
 		
+		// null 로그인 정보 X
 	
 	
 	}

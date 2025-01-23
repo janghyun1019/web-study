@@ -3,6 +3,7 @@ package com.app.service.user;
 import java.util.List;
 
 import com.app.dto.user.User;
+import com.app.dto.user.UserSearchCondition;
 
 public interface UserService {
 	
@@ -18,4 +19,6 @@ public interface UserService {
 	User findUserById(String id);
 	
 	int modifyUser(User user);
+	
+	List<User> findUserListBySearchCondition(UserSearchCondition userSearchCondition);
 }

@@ -16,4 +16,6 @@ public interface UserService {
 	User checkUserLogin(User user);
 	
 	User findUserById(String id);
+	
+	int modifyUser(User user);
 }

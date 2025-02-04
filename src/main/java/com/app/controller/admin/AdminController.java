@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,8 +20,13 @@ import com.app.dto.user.UserSearchCondition;
 import com.app.service.room.RoomService;
 import com.app.service.user.UserService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Controller
 public class AdminController {
+	
+//	private static final Logger log = LogManager.getLogger(AdminController.class);
 	
 	@Autowired
 	RoomService roomService;
@@ -53,6 +60,20 @@ public class AdminController {
 	//관리자 객실 목록 확인
 	@GetMapping("/admin/rooms")
 	public String rooms(Model model) {
+		
+		System.out.println("/admins/rooms 경로 접근 확인");
+		log.info("/admins/rooms 경로 접근 확인 INFO");
+		log.error("/admins/rooms 경로 접근 확인 ERROR");
+		log.debug("/admins/rooms 경로 접근 확인 DEBUG");
+		
+		
+		log.info("방에 들어감");
+		log.debug("방에 문열고 들어가고 문 닫음");
+		log.info("가방 내려놓음");
+		log.debug("가방을 책상 앞에 내려놓음");
+		log.info("화장실 들어감");
+		log.debug("화장실 문열고 불켜고 들어감");
+		
 		
 		List<Room> roomList = roomService.findRoomList();
 		//service.findRoomList 호출 -> DAO findRoomList -> DB (Mybatis mapper) select 
@@ -95,6 +116,8 @@ public class AdminController {
 		
 		int result = roomService.removeRoom(roomIdInt);
 		
+		//log.info
+		
 		return "redirect:/admin/rooms";
 //		if(result > 0) {
 //			
@@ -125,6 +148,9 @@ public class AdminController {
 		int result = roomService.modifyRoom(room);
 		
 		if(result > 0 ) { //수정 성공 -> 목록 or 호실상세정보 페이지
+			
+			log.info("room 정보 수정 : {}", room);
+			
 			return "redirect:/admin/room/" + room.getRoomId();		
 		} else {  //수정 실패 -> 다시 수정페이지로
 			//return "admin/modifyRoom";

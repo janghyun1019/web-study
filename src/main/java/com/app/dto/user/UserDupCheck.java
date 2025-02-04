@@ -4,8 +4,7 @@ import lombok.Data;
 
 @Data
 public class UserDupCheck {
-	
+
 	String id;
 	String type;
-
 }

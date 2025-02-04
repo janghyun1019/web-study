@@ -10,9 +10,10 @@
 	<h1>회원가입 페이지</h1>
 	
 	<form action="" method="post">
-		아이디 : <input type="text" name="id" id="inputId"> 
+		아이디 : <input type="text" name="id" id="inputId"> <br>
 		<button type="button" id="btn_checkDupId">중복체크</button>
-		<span id="checkDupMsg"></span> <br>
+		<span id="checkDupMsg"></span>
+		<br>
 		비밀번호 : <input type="password" name="pw"> <br> 
 		이름 : <input type="text" name="name"> <br>
 		<button type="submit">가입하기</button>
@@ -24,64 +25,63 @@
 		let span_checkDupMsg = document.getElementById('checkDupMsg');
 		
 		btn_checkDupId.addEventListener('click', ()=>{
-			// location.href = "/customer/checkDupId";
+			//location.href = "/customer/checkDupId";
 			
-			
-			// 서버로 ajax 요청 아이디 중복 여부 확인
+			//서버로 ajax 요청  아이디 중복 여부 확인
 			
 			let inputId = document.getElementById('inputId').value;
 			console.log(inputId);
 			
-			let objData = { // javascript Object 타입
-					'id':inputId,
-					'type':'CUS'
-			}
+			let objData = {		//javascript Object 타입 
+				'id':inputId,
+				'type':'CUS'
+			};
 			
-			// javascript Object -> JSON format Text
+			//javascript Object -> JSON format Text
 			let jsonData = JSON.stringify(objData);
 			
-			// Object -> JSON   JSON.stringify
-			// JSON -> obj      JSON.parse
+			//Obj -> JSON      JSON.stringify
+			//JSON -> Obj      JSON.parse
+			
 			
 			
 			$.ajax({
 				type: "POST",
-				url: "http://localhost:8080/customer/checkDupId",
+				url: "http://localhost:8080/customer/checkDupIdJson",
 				headers:{
 					"Content-type":"application/json;"
 				},
 				data: jsonData,
 				dataType: 'json',
-				// dataType: 'text',  //파싱을 해줘야 한다
+// 				dataType: 'text',
 				success: function(result){
 					console.log("ajax success");
 					console.log(result);
 					
-					// let jsonObj = JSON.parse(result);
+// 					let jsObj = JSON.parse(result);
 					
-					// result == 'Y'  XXX
-					// result/body == 'Y'
-					// result.header.resultCode
-					// result.header.resultMessage
-										
-					if(result.header.resultCode == '10'){ // 정상응답
-						if(result == 'Y') { // 중복
-							span_checkDupMsg.textContent = '중복된 아이디 입니다.';
-						} else { // 중복 아닐때
-							span_checkDupMsg.textContent = '사용 가능한 아이디 입니다.';
-						}						
+					//result == 'Y'   XXX
+					//result.body == 'Y'
+					//result.header.resultCode
+					//result.header.resultMessage
+					
+					if(result.header.resultCode == '10'){ //정상응답
+						if(result.body == 'Y'){ //중복
+							span_checkDupMsg.textContent = '중복된 아이디입니다.';
+						} else { //중복 아니
+							span_checkDupMsg.textContent = '사용 가능한 아이디입니다.';
+						}
 					} else {
 						console.log('정상 응답을 받지 못함');
-					}					
+					}
+					
 				},
 				error: function(error){
 					console.log(error);
-				}
-				
+				}				
 			});
 			
-			/*
-			// 단일 id 전송, 단일 text 수신
+			/*   //단일 id 전송, 단일 text 수신
 			$.ajax({
 				type: "POST",
 				url: "http://localhost:8080/customer/checkDupId",
@@ -93,17 +93,15 @@
 					console.log("ajax success");
 					console.log(result);
 					
-					if(result == 'Y') { // 중복
-						span_checkDupMsg.textContent = '중복된 아이디 입니다.';
-					} else { // 중복 아닐때
-						span_checkDupMsg.textContent = '사용 가능한 아이디 입니다.';
+					if(result == 'Y'){ //중복
+						span_checkDupMsg.textContent = '중복된 아이디입니다.';
+					} else { //중복 아니
+						span_checkDupMsg.textContent = '사용 가능한 아이디입니다.';
 					}
-					
 				},
 				error: function(error){
 					console.log(error);
-				}
-				
+				}				
 			});
 			*/
 			

@@ -173,6 +173,15 @@ public class AdminController {
 	public String addUserAction(User user) {
 		//사용자 추가 (관리자X)
 		
+		//유효성 검증
+		if(user.getId().length() < 2) {
+			return "admin/addUser";
+		}
+		
+		if(user.getName().length() > 10) {
+			return "admin/addUser";
+		}
+		
 		user.setUserType(CommonCode.USER_USERTYPE_CUSTOMER);
 		int result = userService.saveUser(user);
 		//int result = userService.saveCustomerUser(user);

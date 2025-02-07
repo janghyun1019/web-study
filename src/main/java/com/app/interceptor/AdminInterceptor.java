@@ -20,6 +20,7 @@ public class AdminInterceptor implements HandlerInterceptor {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		
+		/*
 		if(LoginManager.isLogin(request) == false) {
 			
 			response.sendRedirect("/error/error");
@@ -43,6 +44,7 @@ public class AdminInterceptor implements HandlerInterceptor {
 				return false;
 			}
 		}
+		*/
 		
 		return HandlerInterceptor.super.preHandle(request, response, handler);
 	}

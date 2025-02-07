@@ -14,7 +14,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		
+		/*
 		//로그인이 안된 상태면?
 		if(LoginManager.isLogin(request) == false) {
 			//더이상 진행 X
@@ -22,6 +22,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 			response.sendRedirect("/customer/login");
 			return false; //더이상 진행하지 않기
 		}
+		*/
 		
 		return HandlerInterceptor.super.preHandle(request, response, handler);
 	}

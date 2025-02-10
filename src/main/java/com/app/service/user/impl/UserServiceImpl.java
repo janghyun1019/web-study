@@ -10,6 +10,7 @@ import com.app.dao.user.UserDAO;
 import com.app.dto.user.User;
 import com.app.dto.user.UserSearchCondition;
 import com.app.service.user.UserService;
+import com.app.validator.UserCustomValidator;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -39,6 +40,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public int saveAdminUser(User user) {
+		
 		//관리자 추가 전 검증 로직
 		user.setUserType(CommonCode.USER_USERTYPE_ADMIN);
 		int result = userDAO.saveUser(user);

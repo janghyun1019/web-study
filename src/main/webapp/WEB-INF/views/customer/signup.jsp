@@ -24,6 +24,11 @@
 				<p class="error-msg">${errors.getFieldError('id').defaultMessage}</p>
 			</c:if>
 		</spring:hasBindErrors>
+		
+		<c:if test="${userVaildError.id != null}">
+			<p class="error-msg">${userVaildError.id}</p>
+		</c:if>
+		
 		<button type="button" id="btn_checkDupId">중복체크</button>
 		<span id="checkDupMsg"></span>
 		<br>
@@ -35,11 +40,14 @@
 				<p class="error-msg">${errors.getFieldError('pw').defaultMessage}</p>
 			</c:if>
 		</spring:hasBindErrors>
-		
-		
-		
+		<c:if test="${userVaildError.pw != null}">
+			<p class="error-msg">${userVaildError.pw}</p>
+		</c:if>
 		
 		이름 : <input type="text" name="name" value="${user.name}"> <br>
+		<c:if test="${userVaildError.name != null}">
+			<p class="error-msg">${userVaildError.name}</p>
+		</c:if>
 		<button type="submit">가입하기</button>
 	</form>
 	

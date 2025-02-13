@@ -101,6 +101,22 @@
 <!-- 				OR name LIKE '%' || #{searchKeyword} || '%' -->
 <!-- 			</if> -->
 	</select>
+	
+		<insert id="saveUserProfileImage" parameterType="UserProfileImage">
+		insert into USER_PROFILE_IMAGE
+		values (
+			#{id},
+			#{fileName}
+		)
+	</insert>
+	
+	<select id="findUserProfileImageById" parameterType="String" resultType="UserProfileImage">
+		
+		select * 
+		from user_profile_image
+		where id = #{id}
+		
+	</select>
 
 
 
